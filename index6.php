@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorteio</title>
-</head>
-<body>
-    <button >Sortear</button><br>
-</body>
-</html>
-
+<form method="POST">
+	Número: <input type="text" name="txtNumero"/>
+	<br/>
+	<input type="submit" value="Tentar Sorte"/>
+</form>
 <?php
+	if(isset($_POST["txtNumero"])){
+	$numero = 20;
+	$gera = rand(1,100);
 
-$numeros = array("1", "2", "3", "4", "5", "6");
-$numSorteado = sizeof($numeros);
-$sorteado[1] = $numeros[rand(0,$numSorteado - 1)];
-
-echo "Número Sorteado: " . $sorteado[1] . "<br/>";
-
+	if($gera == $numero) {
+		echo "Você venceu com o número: ".$numero;
+	} else {
+		echo "Você perdeu, tente novamente.";
+        }
+}
 ?>
